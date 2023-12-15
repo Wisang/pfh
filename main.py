@@ -1,3 +1,2 @@
-x = "wisang"
-y = "eom"
-print(f"Hello {x} {y}!")
+ip = input("Enter your ip: ")
+print("Your ip is: " + ip)
