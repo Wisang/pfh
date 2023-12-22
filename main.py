@@ -1,10 +1,10 @@
 words = ["hacker", "bounty", "hunter"]
 
 def is_word_in_string(string):
-    for word in words:
-        if word in string:
-            return "It exists!"
-    return "It does not exist!"
+    if string in words:
+        print("It exists!")
+        return
+    return print("It does not exist!")
 
 is_word_in_string("hacker")
 
