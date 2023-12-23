@@ -1,15 +1,23 @@
+import random
+
 words = ["hacker", "bounty", "hunter"]
 
-def is_word_in_string(string):
-    if string in words:
-        print("It exists!")
-        return
-    return print("It does not exist!")
+chosen_word = random.choice(words)
 
-is_word_in_string("hacker")
+print(chosen_word)
 
-is_word_in_string("bounty")
+display = []
 
-is_word_in_string("hunter")
+for letter in chosen_word:
+    display += "_"
 
-is_word_in_string("white-hacker")
+while "_" in display:
+    input_letter = input("Guess a letter: ").lower()
+
+    for i in range(len(chosen_word)):
+        if chosen_word[i] == input_letter:
+            display[i] = input_letter
+
+    print(display)
+
+print("game complete")
