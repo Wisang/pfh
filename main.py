@@ -11,13 +11,28 @@ display = []
 for letter in chosen_word:
     display += "_"
 
-while "_" in display:
+game_over = False
+num_of_guess = 0
+
+while not game_over:
+
+    num_of_guess += 1
     input_letter = input("Guess a letter: ").lower()
 
-    for i in range(len(chosen_word)):
-        if chosen_word[i] == input_letter:
-            display[i] = input_letter
-
+    for position in range(len(chosen_word)):
+        letter = chosen_word[position]
+        if letter == input_letter:
+            display[position] = input_letter
+    
     print(display)
+
+    if num_of_guess == 7:
+        game_over = True
+        print("You lose")
+        break
+    
+    if "_" not in display:
+        game_over = True
+        print("You win")
 
 print("game complete")
